@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
+
+# Misc
+.DS_Store
+*.pem
+
+# Env
+.env
+.env.*
+
+# AI IDE specific
+tmp_compile/
+compilation_logs.txt
+*.bin
+*.elf
+*.o
+*.d
+build/
+sdkconfig
+*.db
+*.sqlite
+
+# Brain / Artifacts
+.gemini/
+brain/

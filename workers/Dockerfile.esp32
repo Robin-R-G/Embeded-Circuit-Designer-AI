@@ -1,0 +1,13 @@
+# Base image for ESP32 development
+FROM espressif/idf:latest
+
+# Set working directory
+WORKDIR /project
+
+# Install any additional tools if necessary (e.g. python libs)
+# RUN pip install ...
+
+# Entry point for compilation
+# When run, this container expects the project code to be mounted at /project
+ENTRYPOINT ["idf.py"]
+CMD ["build"]
