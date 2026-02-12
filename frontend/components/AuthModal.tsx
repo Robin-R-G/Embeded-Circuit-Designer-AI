@@ -16,7 +16,7 @@ export default function AuthModal({ onClose, onLogin }: { onClose: () => void, o
         const endpoint = isLogin ? '/login' : '/register';
 
         try {
-            const response = await fetch(`https://rotten-cloths-know.loca.lt${endpoint}`, {
+            const response = await fetch(`https://fluffy-lines-argue.loca.lt${endpoint}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

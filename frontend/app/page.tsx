@@ -36,7 +36,7 @@ export default function Home() {
     setIsCompiling(true);
     setLogs((prev) => [...prev, 'Connecting to compiler service...']);
 
-    const ws = new WebSocket('wss://rotten-cloths-know.loca.lt/ws/compile');
+    const ws = new WebSocket('wss://fluffy-lines-argue.loca.lt/ws/compile');
 
     ws.onopen = () => {
       setLogs((prev) => [...prev, `Connected. Sending code for ${board}...`]);
@@ -86,7 +86,7 @@ export default function Home() {
       setLogs((prev) => [...prev, 'Saving to cloud...']);
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch('https://rotten-cloths-know.loca.lt/projects', {
+        const response = await fetch('https://fluffy-lines-argue.loca.lt/projects', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -114,7 +114,7 @@ export default function Home() {
     setCode('// AI is generating code based on your prompt...\n// Please wait...');
     setIsCompiling(true);
 
-    const ws = new WebSocket('wss://rotten-cloths-know.loca.lt/ws/autopilot');
+    const ws = new WebSocket('wss://fluffy-lines-argue.loca.lt/ws/autopilot');
 
     ws.onopen = () => {
       ws.send(JSON.stringify({ type: 'generate', prompt, board }));
@@ -220,8 +220,8 @@ export default function Home() {
               onClick={handleCompile}
               disabled={isCompiling}
               className={`flex items-center px-4 py-1.5 rounded-lg text-xs font-bold transition-all ${isCompiling
-                  ? 'bg-blue-500/20 text-blue-300 animate-pulse cursor-wait border border-blue-500/20'
-                  : 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20 border border-blue-400/20'
+                ? 'bg-blue-500/20 text-blue-300 animate-pulse cursor-wait border border-blue-500/20'
+                : 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-600/20 border border-blue-400/20'
                 }`}
               title="Compile & Run"
             >

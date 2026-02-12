@@ -27,7 +27,7 @@ export default function ProjectsModal({ onClose, onLoadProject }: ProjectsModalP
     const fetchProjects = async () => {
         try {
             const token = localStorage.getItem('token');
-            const response = await fetch('https://rotten-cloths-know.loca.lt/projects', {
+            const response = await fetch('https://fluffy-lines-argue.loca.lt/projects', {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
