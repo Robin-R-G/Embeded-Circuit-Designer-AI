@@ -27,16 +27,31 @@ smartguard/
 │   │   └── widgets/
 │   ├── services/
 │   └── main.dart
+├── scripts/
 ├── pubspec.yaml
 └── analysis_options.yaml
 ```
 
-## Setup
+## Downloadable APK (GitHub Actions)
+
+A CI workflow is included at `.github/workflows/smartguard_build_apk.yml`.
+
+How to get APK:
+
+1. Push your branch to GitHub.
+2. Open **Actions** → **Build SmartGuard APK**.
+3. Run workflow (`workflow_dispatch`).
+4. Open the completed run and download artifact **smartguard-release-apk**.
+5. The artifact contains `app-release.apk` ready for installation.
+
+## Local Build
 
 1. Install Flutter 3.x and run `flutter pub get` in `smartguard`.
-2. Add Firebase configuration files for Android/iOS.
-3. Ensure biometric permissions are set in platform manifests.
-4. Run the app with `flutter run`.
+2. If this directory does not yet contain Flutter platform folders, run:
+   - `flutter create . --platforms=android --project-name smartguard`
+3. Add Firebase configuration files for Android/iOS.
+4. Ensure biometric permissions are set in platform manifests.
+5. Build APK with `flutter build apk --release`.
 
 ## Security Notes
 
@@ -44,4 +59,3 @@ smartguard/
 - Biometric authentication falls back to PIN.
 - POST requests include token and request timestamp.
 - Timestamp skew over 10 seconds is rejected client-side before dispatch.
-
